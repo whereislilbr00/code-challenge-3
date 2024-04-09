@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
     // Function to fetch movie details by ID
     function fetchMovieDetails(movieId) {
-      fetch("https://localhost:3000/films + 1")
+      fetch("https://json-deploy-wxh7.onrender.com/films + 1")
         .then(response => response.json())
         .then(movie => {
           selectedMovie = movie;
@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function() {
       selectedMovie.tickets_sold++;
   
       // Update the movie details on the server
-      fetch('http://localhost:3000/films/' + selectedMovie.id, {
+      fetch('https://json-deploy-wxh7.onrender.com/films' + selectedMovie.id, {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json'
@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
     // Function to delete a film
     function deleteFilm(movieId) {
-      fetch('http://localhost:3000/films/' + movieId, {
+      fetch('https://json-deploy-wxh7.onrender.com/films' + movieId, {
         method: 'DELETE'
       })
       .then(res=>res.json())
